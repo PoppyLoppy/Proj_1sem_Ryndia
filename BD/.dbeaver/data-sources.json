@@ -1,0 +1,135 @@
+{
+	"folders": {},
+	"connections": {
+		"sqlite_jdbc-17ff507fa40-573a1bb1f3b9a6da": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "saper.db",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "C:\\Users\\Student\\PycharmProjects\\Proj_1sem_Ryndia\\BD\\saper.db",
+				"url": "jdbc:sqlite:C:\\Users\\Student\\PycharmProjects\\Proj_1sem_Ryndia\\BD\\saper.db",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		},
+		"sqlite_jdbc-17ff5090218-35bee7d3748e9a2d": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "saper.db 2",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "C:\\Users\\Student\\PycharmProjects\\Proj_1sem_Ryndia\\BD\\saper.db",
+				"url": "jdbc:sqlite:C:\\Users\\Student\\PycharmProjects\\Proj_1sem_Ryndia\\BD\\saper.db",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		},
+		"sqlite_jdbc-17ff50a5358-502c393a9b82a495": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "saper.db 3",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "C:\\Users\\Student\\PycharmProjects\\Proj_1sem_Ryndia\\BD\\saper.db",
+				"url": "jdbc:sqlite:C:\\Users\\Student\\PycharmProjects\\Proj_1sem_Ryndia\\BD\\saper.db",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		},
+		"sqlite_jdbc-17ff50ded0f-6c2e8a8f937b8c9f": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "saper.db 4",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "C:\\Users\\Student\\PycharmProjects\\Proj_1sem_Ryndia\\BD\\saper.db",
+				"url": "jdbc:sqlite:C:\\Users\\Student\\PycharmProjects\\Proj_1sem_Ryndia\\BD\\saper.db",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		},
+		"sqlite_jdbc-17ff50f2447-1f70b0a77caf7062": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "saper.db 5",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "C:\\Users\\Student\\PycharmProjects\\Proj_1sem_Ryndia\\BD\\saper.db",
+				"url": "jdbc:sqlite:C:\\Users\\Student\\PycharmProjects\\Proj_1sem_Ryndia\\BD\\saper.db",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		},
+		"sqlite_jdbc-17ff5120896-32cf4848dbdf35e3": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "saper.db 6",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "C:\\Users\\Student\\PycharmProjects\\Proj_1sem_Ryndia\\BD\\saper.db",
+				"url": "jdbc:sqlite:C:\\Users\\Student\\PycharmProjects\\Proj_1sem_Ryndia\\BD\\saper.db",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		},
+		"sqlite_jdbc-17ff5146c5f-64907bcaeb3e685": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "saper.db 7",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "C:\\Users\\Student\\PycharmProjects\\Proj_1sem_Ryndia\\BD\\saper.db",
+				"url": "jdbc:sqlite:C:\\Users\\Student\\PycharmProjects\\Proj_1sem_Ryndia\\BD\\saper.db",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		},
+		"sqlite_jdbc-17ff515069a-36e1465d2c9cade3": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "saper.db 8",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "C:\\Users\\Student\\PycharmProjects\\Proj_1sem_Ryndia\\BD\\saper.db",
+				"url": "jdbc:sqlite:C:\\Users\\Student\\PycharmProjects\\Proj_1sem_Ryndia\\BD\\saper.db",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		},
+		"sqlite_jdbc-17ff51597ef-32ea55e6b5deda7d": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "saper.db 9",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "C:\\Users\\Student\\PycharmProjects\\Proj_1sem_Ryndia\\BD\\saper.db",
+				"url": "jdbc:sqlite:C:\\Users\\Student\\PycharmProjects\\Proj_1sem_Ryndia\\BD\\saper.db",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Разработка",
+			"color": "255,255,255",
+			"description": "База данных для разработки",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}
