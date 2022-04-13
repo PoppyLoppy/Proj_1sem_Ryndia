@@ -9,11 +9,25 @@ with sq.connect('saper.db') as con:
         old INTEGER,
         score INTEGER
     )''')
-    info_users = [
-        (1, "Алексей", 1, 22, 1000)
-        (2, "Миша", 1, 19, 800)
-        (3, "Сергей", 1, 19, 900)
-        (4, "Мария", 2, 18, 1500)
-        (5, "Александр", 1, 20, 1100)
-    ]
-    cur.executemany("INSERT INTO users VALUES (?, ?, ?, ?)")
+
+    # cur.execute("INSERT INTO users VALUES (1, 'Алексей', 1, 22, 1000)")
+    # cur.execute("INSERT INTO users VALUES (2, 'Миша', 1, 19, 800)")
+    # cur.execute("INSERT INTO users VALUES (3, 'Сергей', 1, 19, 900)")
+    # cur.execute("INSERT INTO users VALUES (4, 'Мария', 2, 18, 1500)")
+    # cur.execute("INSERT INTO users VALUES (5, 'Александр', 1, 20, 1100)")
+
+    cur.execute("SELECT * FROM users")
+    print(cur.fetchall())
+    cur.execute("SELECT * FROM users WHERE sex = 2")
+    print(cur.fetchall())
+    cur.execute("SELECT * FROM users WHERE score < 1000")
+    print(cur.fetchall())
+    cur.execute("SELECT * FROM users ORDER BY score DESC")
+    print(cur.fetchone())
+    cur.execute("SELECT * FROM users WHERE old BETWEEN 18 AND 20")
+    print(cur.fetchall())
+
+    cur.execute("UPDATE users SET old = 20 WHERE old = 19")
+    cur.execute("UPDATE users SET score = score + 300 WHERE score < 1000")
+    cur.execute("UPDATE users SET score = score + 100 WHERE old >= 20")
+    cur.execute("DELETE FROM users WHERE score < 1000")
