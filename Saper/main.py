@@ -14,12 +14,15 @@ class Main(tk.Frame):
         toolbar = tk.Frame(bg='#a0dea0', bd=4)
         toolbar.pack(side=tk.TOP, fill=tk.X)
 
-        self.add_img = tk.PhotoImage(file="BD/11.png")
+        self.add_img1 = tk.PhotoImage(file="BD/11.png")
         btn_open_dialog = tk.Button(toolbar, text='Добавить игрока', command=self.open_dialog, bg='#5da130', bd=0,
-        compound=tk.TOP, image=self.add_img)
+        compound=tk.TOP, image=self.add_img1)
         btn_open_dialog.pack(side=tk.LEFT)
 
-
+        self.add_img2 = tk.PhotoImage(file="BD/12.png")
+        btn_open_dialog_search = tk.Button(toolbar, text='Найти игрока', command=self.open_dialog_search, bg='#5da130',
+        bd=0, compound=tk.TOP, image=self.add_img2)
+        btn_open_dialog_search.pack(side=tk.LEFT)
 
         self.tree = ttk.Treeview(self, columns=('user_id', 'name', 'sex', 'old', 'score'), height=15, show='headings')
 
@@ -40,7 +43,8 @@ class Main(tk.Frame):
 
     def open_dialog(self):
         Child(self)
-
+    def open_dialog_search(self):
+        Search(self)
 
 class DB:
     with sq.connect('BD/saper.db') as con:

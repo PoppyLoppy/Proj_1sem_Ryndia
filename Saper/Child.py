@@ -4,7 +4,7 @@ import tkinter.ttk as ttk
 
 class Child(tk.Toplevel):
 
-    """Класс для дочернего окна"""
+    """Класс для дочернего окна Добавить игрока"""
 
     def __init__(self, root):
         super().__init__(root)
@@ -42,6 +42,35 @@ class Child(tk.Toplevel):
         self.btn_ok = ttk.Button(self, text='Добавить')
         self.btn_ok.place(x=220, y=170)
         self.btn_ok.bind('<Button-1>')
+
+        self.grab_set()
+        self.focus_set()
+
+
+class Search(tk.Toplevel):
+
+    """Класс для дочернего окна Найти игрока"""
+
+    def __init__(self, root):
+        super().__init__(root)
+        self.init_child()
+
+    def init_child(self):
+        self.title('Поиск')
+        self.geometry('240x90+400+300')
+        self.resizable(False, False)
+
+        label_name = tk.Label(self, text='Поиск')
+        label_name.place(x=20, y=20)
+        self.entry_name = ttk.Entry(self)
+        self.entry_name.place(x=80, y=20)
+
+        btn_cancel = ttk.Button(self, text='Поиск')
+        btn_cancel.place(x=60, y=50)
+
+        self.btn_ok = ttk.Button(self, text='Закрыть', command=self.destroy)
+        self.btn_ok.place(x=140, y=50)
+
 
         self.grab_set()
         self.focus_set()
