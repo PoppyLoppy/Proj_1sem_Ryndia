@@ -4,7 +4,6 @@ import sqlite3 as sq
 
 
 class Main(tk.Frame):
-
     """Класс для главного окна"""
 
     def __init__(self, root):
@@ -18,8 +17,9 @@ class Main(tk.Frame):
         toolbar.pack(side=tk.TOP, fill=tk.X)
 
         self.add_img = tk.PhotoImage(file="DB/11.png")
-        self.btn_open_dialog = tk.Button(toolbar, text='Добавить работника', command=self.open_dialog, bg='#f5bad5', bd=0,
-                                    compound=tk.TOP, image=self.add_img)
+        self.btn_open_dialog = tk.Button(toolbar, text='Добавить работника', command=self.open_dialog, bg='#f5bad5',
+                                         bd=0,
+                                         compound=tk.TOP, image=self.add_img)
         self.btn_open_dialog.pack(side=tk.LEFT, padx=5)
 
         self.update_img = tk.PhotoImage(file="DB/12.png")
@@ -29,7 +29,7 @@ class Main(tk.Frame):
 
         self.delete_img = tk.PhotoImage(file="DB/13.png")
         btn_delete = tk.Button(toolbar, text="Удалить запись", command=self.delete_records, bg='#f5bad5',
-                                    bd=0, compound=tk.TOP, image=self.delete_img)
+                               bd=0, compound=tk.TOP, image=self.delete_img)
         btn_delete.pack(side=tk.LEFT, padx=5)
 
         self.search_img = tk.PhotoImage(file="DB/14.png")
@@ -39,7 +39,7 @@ class Main(tk.Frame):
 
         self.refresh_img = tk.PhotoImage(file="DB/15.png")
         btn_refresh = tk.Button(toolbar, text="Обновить экран", command=self.view_records, bg='#f5bad5',
-                               bd=0, compound=tk.TOP, image=self.refresh_img)
+                                bd=0, compound=tk.TOP, image=self.refresh_img)
         btn_refresh.pack(side=tk.LEFT, padx=5)
 
         self.tree = ttk.Treeview(self, columns=('id', 'name', 'add_work', 'total', 'time'), height=15, show='headings')
@@ -85,7 +85,6 @@ class Main(tk.Frame):
         [self.tree.delete(i) for i in self.tree.get_children()]
         [self.tree.insert('', 'end', values=row) for row in self.db.cur.fetchall()]
 
-
     def open_dialog(self):
         Child(root, app)
 
@@ -95,8 +94,8 @@ class Main(tk.Frame):
     def open_search_dialog(self):
         Search()
 
-class Child(tk.Toplevel):
 
+class Child(tk.Toplevel):
     """Класс для дочернего окна"""
 
     def __init__(self, root, app):
@@ -148,6 +147,7 @@ class Child(tk.Toplevel):
         self.grab_set()
         self.focus_set()
 
+
 class Update(Child):
     def __init__(self):
         super().__init__(root, app)
@@ -164,6 +164,7 @@ class Update(Child):
                                                                           self.entry_total.get(),
                                                                           self.entry_time.get()))
         self.btn_ok.destroy()
+
 
 class Search(tk.Toplevel):
     def __init__(self):
@@ -190,9 +191,9 @@ class Search(tk.Toplevel):
         btn_search.bind('<Button-1>', lambda event: self.view.search_records(self.entry_search.get()))
         # btn_search.bind('<Button-1>', lambda event: self.destroy(), add='+')
 
+
 class DB:
     def __init__(self):
-
         with sq.connect('DB/responsibility.db') as self.con:
             self.cur = self.con.cursor()
             self.cur.execute("""CREATE TABLE IF NOT EXISTS responsibility (
@@ -205,8 +206,9 @@ class DB:
 
     def insert_data(self, id, name, add_work, total, time):
         self.cur.execute("""INSERT INTO responsibility(id, name, add_work, total, time) VALUES (?, ?, ?, ?, ?)""",
-                             (id, name, add_work, total, time))
+                         (id, name, add_work, total, time))
         self.con.commit()
+
 
 if __name__ == "__main__":
     root = tk.Tk()
