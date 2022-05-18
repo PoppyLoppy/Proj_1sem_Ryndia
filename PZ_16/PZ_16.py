@@ -176,8 +176,8 @@ class Search(tk.Toplevel):
         self.geometry("300x100+400+300")
         self.resizable(False, False)
 
-        label_search = tk.Label(self, text="Поиск")
-        label_search.place(x=50, y=20)
+        label_search = tk.Label(self, text="Сумма оплаты")
+        label_search.place(x=10, y=20)
 
         self.entry_search = ttk.Entry(self)
         self.entry_search.place(x=105, y=20, width=150)
