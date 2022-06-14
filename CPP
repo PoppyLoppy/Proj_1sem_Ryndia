@@ -4,8 +4,175 @@
 
 using namespace std;
 
- int point3d() {
-	 class Point3d
+// 1
+
+int sum_list() {
+	int a;
+	int b;
+
+	cout << "Введите первую координату: ";
+	cin >> a;
+
+	cout << "Введите вторую координату: ";
+	cin >> b;
+	
+	cout << "Поле с этими координатами ";
+	if ((a % 2 != 0 && b % 2 != 0) || (a % 2 == 0 && b % 2 == 0)) {
+		cout << "черное";
+	}
+	else {
+		cout << "белое";
+	}
+
+	return 0;
+}
+
+// 2 
+
+int pz6() {
+	int a;
+	int b;
+	int c = 0;
+
+	cout << "Введите первое число ряда: ";
+	cin >> a;
+	cout << "Введите последнее число ряда: ";
+	cin >> b;
+
+	for (int i = a; i <= b; ++i) {
+		c += i;
+	}
+
+	cout << "Сумма чисел ряда от " << a << " до " << b << ": " << c << " (решение с помощью цикла for)" << endl;;
+	return 0;
+}
+
+
+int sum_from_to(int a, int b) {
+	int s = 0;
+	int i = a + 1;
+	while (i < b)
+	{
+		s += i;
+		i += 1;
+	}
+	return s;
+}
+
+// 3
+
+int sum_from_to1() {
+	
+	int a;
+	int b;
+
+	cout << "Введите первое число: ";
+	cin >> a;
+
+	cout << "Введите второе число, которое больше предыдущего введённого: ";
+	cin >> b;
+
+	cout << "Сумма чисел от " << a << " до " << b <<  " (не включая их): " << sum_from_to(a, b) << endl;
+
+	return 0;
+}
+
+// 4
+
+int sum_list1() {
+	 int a;
+	 int b;
+	 int sum = 0;
+
+	 int list1[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+	 cout << "Дан список:";
+	 for (int n : list1)
+		 cout << n << " ";
+	 cout << endl;
+
+	 cout << "Введите число из данного списка: ";
+	 cin >> a;
+	 cout << "Введите число из данного списка, которое больше предыдущего: ";
+	 cin >> b;
+
+	 for (int i = 0; i < a-1; ++i) {
+		 sum += list1[i];
+	 }
+
+	 for (int i = b; i < 10; ++i) {
+		 sum += list1[i];
+	 }
+
+
+	 cout << "Сумма элементов списка, кроме элементов от " << a << " до " << b << " включительно: " << sum << endl;
+
+	 return 0;
+}
+
+// 5
+
+int pz_2() {
+	int a;
+
+	cout << "Введите трёхзначное число: ";
+	cin >> a;
+
+	int b = a / 100;
+	int d = (a % 100) / 10;
+	int c = a % 10;
+
+	cout << "Число, полученное при перестановке десятков и единиц исходного числа: " << b << c << d << endl;
+
+	return 0;
+}
+
+int main()
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	int number;
+
+	cout << "Введите номер задачи: ";
+	cin >> number;
+
+	switch (number) {
+	case 1: 
+		sum_list();
+		break;
+
+	case 2:
+		pz6();
+		break;
+
+	case 3:
+		sum_from_to1();
+		break;
+
+	case 4: 
+		sum_list1();
+		break;
+
+	case 5:
+		pz_2();
+		break;
+
+	default:
+		cout << "Такой задачи нет";
+	}
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+class Point3d
 	 {
 	 private:
 		 int m_x;
@@ -40,103 +207,3 @@ using namespace std;
 	 test.print();
 
 	 return 0;
-}
-
- int sum_list() {
-	 int sum2(int n) {
-		 int s = 0;
-		 int i = 1;
-		 while (i <= n) {
-			 s += i;
-			 i += 1;
-		 }
-		 return s;
-	 }
-
-	 int n;
-
-	 cout << "Введите последнее число ряда: ";
-	 cin >> n;
-
-	 cout << "Сумма числового ряда до " << n << ": " << sum2(n) << endl;
-
-	 return 0;
-}
-
- int pz6() {
-	 int a;
-	 int b;
-	 int c;
-
-	 cout << "Введите первое число ряда: ";
-	 cin >> a;
-	 cout << "Введите последнее число ряда: ";
-	 cin >> b;
-
-	 for (int i = a; i < b; i++) {
-		 c += a;
-		 cout << c;
-	 }
-	 return 0;
-}
-
- int sum_from_to() {
-	 int sum1(int a, int b) {
-		 int s = 0;
-		 int i = a + 1;
-		 while (i < b)
-		 {
-			 s += i;
-			 i += 1;
-		 }
-		 return s;
-	 }
-
-	 int a;
-	 int b;
-
-	 list <int> list1 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-
-	 cout << "Дан список:";
-	 for (int n : list1)
-		 cout << n << " ";
-	 cout << endl;
-	 cout << "Введите любое число из этого списка: ";
-	 cin >> a;
-	 cout << "Введите любое число из этого списка, которое больше предыдущего: ";
-	 cin >> b;
-	 cout << "Сумма чисел, расположенных между " << a << " и " << b << " (не включая их): " << sum1(a, b) << endl;
-
-	 return 0;
-}
-
-int main()
-{
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
-
-	int n;
-
-	cout << "Введите номер задачи: ";
-	cin >> n;
-
-	switch (n) {
-	case 1:
-		point3d();
-		break;
-	case 2:
-		sum_list();
-		break;
-	case 3:
-		pz6();
-		break;
-	case 4:
-		sum_from_to();
-		break;
-	default:
-		cout << "Такой задачи нет.";
-	}
-
-	return 0;
-}
-
